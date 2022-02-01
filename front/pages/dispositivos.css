@@ -1,0 +1,270 @@
+body {
+    padding: 25px 0;
+    user-select: none;
+}
+
+#green-sentinel-app {
+    width: 414px;
+    height: 896px;
+    margin: 0 auto;
+    border: 1px solid #808080;
+    background-color: #EAEAEA;
+    padding: 40px 30px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+#alertas {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 85%;
+    text-align: center;
+    z-index: 1;
+}
+
+.alerta {
+    background-color: rgba(255,255,255, 0.9);
+    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 30px 15px;
+}
+
+.warning {
+    font-weight: bold;
+    color: #CC0000;
+    font-size: 20px;
+}
+
+.alerta-humidity img, .alerta-temperature img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.page-title {
+    color: #000000;
+    font-size: 27px;
+    margin: 0px auto 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page-cta-section {
+    display: flex;
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+.page-cta {
+    background-color: #53A556;
+    color: #FFFFFF;
+    border: 1px solid #53A556;
+    border-radius: 10px;
+    width: 33%;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 12px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-cta:hover {
+    background-color: #FFFFFF;
+    color: #53A556;
+    cursor: pointer;
+}
+
+.page-cta:not(:first-of-type) {
+    margin-left: 15px;
+}
+
+.section-layout {
+    width: 100%;
+    padding: 10px 24px;
+    background-color: #FFFDFD;
+    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.section-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000
+}
+
+.grey-content {
+    background-color: #C4C4C4;
+    border-radius: 20px;
+    height: 94px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    position: relative;
+}
+
+.grey-content:hover {
+    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.img-container {
+    margin-right: 16px;
+}
+
+.img-sensor {
+    height: 57px;
+}
+
+.name-bomba {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+}
+
+.status-bomba {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+}
+
+.status-bomba-text {
+    display: flex;
+    align-items: center;
+}
+
+.status-bomba-text::before {
+    content: '';
+    background-color: #CC0000;
+    border-radius: 100%;
+    height: 8px;
+    width: 8px;
+    display: block;
+    margin-right: 4px;
+}
+
+.grey-content.sensor:not(:first-of-type) {
+    margin-top: 16px;
+}
+
+.refresh-sensores {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    transition: transform .5s ease-in-out;
+}
+
+.refresh-sensores:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.refresh-sensores img {
+    height: 30px;
+}
+
+.sensor-id {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+.sensor-data {
+    width: 100%;
+}
+
+.sensor-data-row {
+    display: flex;
+    height: 50%;
+    justify-content: center;
+}
+
+.sensor-info {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sensor-info:hover {
+    transform: scale(1.1);
+}
+
+.sensor-info-value {
+    margin-left: 4px;
+}
+
+.sensor-info-humidity img {
+    height: 26px;
+}
+
+#humidity-value, #luminosity-value {
+    color: #53A657;
+}
+
+.sensor-info-temperature {
+    margin-left: 32px;
+}
+
+#temperature-value {
+    color: #FF4E43;
+}
+
+.sensor-info-temperature img {
+    height: 30px;
+}
+
+.sensor-info-luminosity img {
+    height: 19px;
+}
+
+.sensor-info-timer {
+    margin-left: 32px;
+}
+
+#timer-value {
+    color: #000000;
+}
+
+.sensor-info-timer img {
+    height: 20px;
+}
+
+#nav-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 89px;
+    width: 100%;
+    background-color: #53A556;
+    color: #FFFFFF;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button {
+    width: 25%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+}
+
+.nav-button:not(:first-of-type) {
+    border-left: 2px solid #FFFFFF;
+}
+
+.nav-button img {
+    height: 20px;
+    margin-bottom: 8px;
+}

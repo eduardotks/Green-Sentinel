@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./dispositivos.css">
+    <script src="./dispositivos.js"></script>
+
+    <script>
+    </script>
+
+</head>
+
+<body>
+    <div id="green-sentinel-app">
+        <div id="alertas">
+            <!-- <div class="alerta alerta-humidity">
+                <div class="warning">ALERTA!</div>
+                <img class="alerta-humidity" src="../images/humidity.png">Umidade crítica no sensor #(sensor)
+            </div>
+            <div class="alerta alerta-temperature">
+                <div class="warning">ALERTA!</div>
+                <img class="alerta-humidity" src="../images/temperature.png">Temperatura crítica no sensor #(sensor)
+            </div> -->
+        </div>
+
+        <div class="page-title">Dispositivos Conectados</div>
+
+        <div class="page-cta-section">
+            <div class="page-cta">AGENDAR</div>
+
+            <div class="page-cta">RELATÓRIO DIÁRIO</div>
+
+            <div class="page-cta">REMOVER</div>
+        </div>
+
+        <div class="section-layout">
+            <div class="section-title">Automação</div>
+
+            <div class="grey-content">
+                <div class="img-container">
+                    <img class="img-sensor" src="../images/sensor.png">
+                </div>
+
+                <div class="name-bomba">Bomba Jardim #1</div>
+                
+                <div class="status-bomba">
+                    <div class="status-bomba-text">Offline</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-layout">
+            <div class="refresh-sensores"><img src="../images/refresh.png"></div>
+            
+            <div class="section-title">Sensores</div>
+
+            <div id="sensores">
+                <!-- <div class="grey-content sensor">
+                    <div class="img-container">
+                        <img class="img-sensor" src="../images/sensor.png">
+
+                        <div class="sensor-id">#1</div>
+                    </div>
+
+                    <div class="sensor-data">
+                        <div class="sensor-data-row">
+                            <div class="sensor-info sensor-info-humidity">
+                                <img src="../images/humidity.png"><div id="humidity-value" class="sensor-info-value">80%</div>
+                            </div>
+
+                            <div class="sensor-info sensor-info-temperature">
+                                <img src="../images/temperature.png"><div id="temperature-value" class="sensor-info-value">28 °C</div>
+                            </div>
+                        </div>
+                        <div class="sensor-data-row">
+                            <div class="sensor-info sensor-info-luminosity">
+                                <img src="../images/luminosity.png"><div id="luminosity-value" class="sensor-info-value">400lx</div>
+                            </div>
+
+                            <div class="sensor-info sensor-info-timer">
+                                <img src="../images/timer.png"><div id="timer-value" class="sensor-info-value">01:48:35</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grey-content sensor">
+                    <div class="img-container">
+                        <img class="img-sensor" src="../images/sensor.png">
+
+                        <div class="sensor-id">#2</div>
+                    </div>
+
+                    <div class="sensor-data">
+                        <div class="sensor-data-row">
+                            <div class="sensor-info sensor-info-humidity">
+                                <img src="../images/humidity.png"><div id="humidity-value" class="sensor-info-value">80%</div>
+                            </div>
+
+                            <div class="sensor-info sensor-info-temperature">
+                                <img src="../images/temperature.png"><div id="temperature-value" class="sensor-info-value">28 °C</div>
+                            </div>
+                        </div>
+                        <div class="sensor-data-row">
+                            <div class="sensor-info sensor-info-luminosity">
+                                <img src="../images/luminosity.png"><div id="luminosity-value" class="sensor-info-value">400lx</div>
+                            </div>
+
+                            <div class="sensor-info sensor-info-timer">
+                                <img src="../images/timer.png"><div id="timer-value" class="sensor-info-value">01:48:35</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grey-content sensor">
+                    <div class="img-container">
+                        <img class="img-sensor" src="../images/sensor.png">
+
+                        <div class="sensor-id">#3</div>
+                    </div>
+
+                    <div class="sensor-data">
+                        <div class="sensor-data-row">
+                            <div class="sensor-info sensor-info-humidity">
+                                <img src="../images/humidity.png"><div id="humidity-value" class="sensor-info-value">80%</div>
+                            </div>
+
+                            <div class="sensor-info sensor-info-temperature">
+                                <img src="../images/temperature.png"><div id="temperature-value" class="sensor-info-value">28 °C</div>
+                            </div>
+                        </div>
+                        <div class="sensor-data-row">
+                            <div class="sensor-info sensor-info-luminosity">
+                                <img src="../images/luminosity.png"><div id="luminosity-value" class="sensor-info-value">400lx</div>
+                            </div>
+
+                            <div class="sensor-info sensor-info-timer">
+                                <img src="../images/timer.png"><div id="timer-value" class="sensor-info-value">01:48:35</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="nav-menu">
+            <div class="nav-button">
+                <div><img src="../images/sensor.png"></div>
+                <div>DISPOSITIVOS</div>
+            </div>
+            <div class="nav-button">
+                <div><img src="../images/plant.png"></div>
+                <div>PLANTAS</div>
+            </div>
+            <div class="nav-button">
+                <div><img src="../images/profile.png"></div>
+                <div>PERFIL</div>
+            </div>
+            <div class="nav-button">
+                <div><img src="../images/settings.png"></div>
+                <div>AJUSTES</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
