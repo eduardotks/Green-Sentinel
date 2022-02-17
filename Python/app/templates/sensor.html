@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD com Python</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Sensores</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/create_sensor" class="btn btn-success">Adicionar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Potencia</th>
+              <th scope="col">Duração</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for dbs in db %}
+           <tr>
+              <th>{{dbs.id}}</th>
+              <td>{{dbs.name}}</td>
+              <td>{{dbs.potency}}</td>
+              <td>{{dbs.duration}}</td>
+              <td>
+                  <a href="/view_sensor/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                  <a href="/update_sensor/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                  <a href="/delete_sensor/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+</body>
+</html>
