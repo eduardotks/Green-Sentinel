@@ -10,3 +10,24 @@ class Sensor(models.Model):
     duration = models.IntegerField()
     serial = models.CharField(max_length=20)
     brand = models.CharField(max_length=20)
+
+class Planta(models.Model):
+    nome_cientifico = models.CharField(max_length=100)
+    familia = models.CharField(max_length=100)
+    pais_origem = models.CharField(max_length=100)
+    cor = models.CharField(max_length=50)
+    floracao = models.CharField(max_length=100)
+    tamanho_medio = models.DecimalField(max_digits=9, decimal_places=2)
+    solo = models.CharField(max_length=100)
+    luminosidade_preferida = models.CharField(max_length=100)
+    frequencia_irrigacao = models.CharField(max_length=100)
+
+
+def list_plantas(request):
+    plantas = Planta.objects.all()
+    return render(request, "plantas.html", {"plantas": plantas})
+
+def create_planta(request):
+        if form.is_valid():
+            form.save()
+            return redirect('list_plantas')
