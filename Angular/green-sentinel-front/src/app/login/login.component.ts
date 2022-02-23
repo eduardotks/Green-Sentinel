@@ -1,26 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { OktaAuthService } from '@okta/okta-angular';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  constructor() {}
 
-  constructor(private oktaAuth: OktaAuthService, private router: Router) {
-  }
+  abc;
+
+  data;
 
   async ngOnInit() {
-    const isAuthenticated = await this.oktaAuth.isAuthenticated();
-    if (isAuthenticated) {
-      this.router.navigate(['/home'], {replaceUrl: true})
-    }
+    // this.abc = fetch('http://127.0.0.1:8000/sensor/').then((response) =>
+    //   response.json()
+    // );
+  
+    // example consuming code
+    this.data = await this.teste(
+      "http://127.0.0.1:8000/sensor/"
+    );
+
+    // this.abc = fetch('http://127.0.0.1:8000/sensor/', {mode: 'no-cors'}).then((response) => response.json()).then((data) => console.log(data));
   }
 
-  async login(event) {
-    event.preventDefault();
-    await this.oktaAuth.loginRedirect('/home');
+  async teste(
+    request: RequestInfo
+  ): Promise<any> {
+    const response = await fetch(request, {mode: 'no-cors'});
+    const body = await response.json();
+    return body;
   }
 }
