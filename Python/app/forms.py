@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from app.models import Sensor
 from app.models import Planta
+from app.models import ClientForm
 
 class SensorForm(ModelForm):
     class Meta:
@@ -12,3 +13,9 @@ class PlantaForm(ModelForm):
    class Meta:
             model = Planta
             fields = ['nome_cientifico','familia','pais_origem','cor','floracao', 'tamanho_medio', 'solo','luminosidade_preferida','frequencia_irrigacao']
+
+
+class ClientForm(ModelForm):
+    class Meta:
+        model = ClientForm
+        fields = ['nome', 'cpf', 'email', 'data', 'phone']

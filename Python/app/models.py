@@ -22,6 +22,13 @@ class Planta(models.Model):
     luminosidade_preferida = models.CharField(max_length=100)
     frequencia_irrigacao = models.CharField(max_length=100)
 
+class ClientForm(models.Model):
+    nome = models.CharField(max_length=80)
+    cpf = models.CharField(max_length=11)
+    email = models.EmailField(max_length=20)
+    data = models.CharField(max_length=10)
+    phone = models.CharField(max_length=20)
+
 
 def list_plantas(request):
     plantas = Planta.objects.all()
