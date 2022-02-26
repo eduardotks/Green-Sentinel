@@ -15,9 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import home
+from app.views import sensor, create_sensor, create, view_sensor, update_sensor, update, delete_sensor, home_planta, form_planta, create_planta, view_planta, edit_planta, update_planta, delete_planta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('sensor/', sensor),
+    path('create_sensor/', create_sensor),
+    path('create/', create, name='create'),
+    path('view_sensor/<int:pk>/', view_sensor, name='view_sensor'),
+    path('update_sensor/<int:pk>/', update_sensor, name='update_sensor'),
+    path('update/<int:pk>/', update, name='update'),
+    path('delete_sensor/<int:pk>/', delete_sensor, name='delete_sensor'),
+    path('', home_planta, name='home_planta'),
+    path('form_planta/', form_planta, name='form_planta'),
+    path('create_planta/', create_planta, name='create_planta'),
+    path('view_planta/<int:pk>/', view_planta, name='view_planta'),
+    path('edit_planta/<int:pk>/', edit_planta, name='edit_planta'),
+    path('update_planta/<int:pk>/', update_planta, name='update_planta'),
+    path('delete_planta/<int:pk>/', delete_planta, name='delete_planta'),
 ]

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class ="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Visualização</h1>
+    </div>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <a href="/" class="btn btn-info"> Voltar</a>
+
+    </div>
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <strong>Nome Científico: </strong>{{db.nome_cientifico}}<br>
+        <strong>País de Origem: </strong>{{db.pais_origem}}<br>
+        <strong>Cor: </strong>{{db.cor}}<br>
+        <strong>Floração: </strong>{{db.floracao}}<br>
+        <strong>Tamanho Médio: </strong>{{db.tamanho_medio}}<br>
+        <strong>Solo: </strong>{{db.solo}}<br>
+        <strong>Luminosidade Preferida: </strong>{{db.luminosidade_preferida}}<br>
+        <strong>Frequência de Irrigação: </strong>{{db.frequencia_irrigacao}}<br>
+    </div>
+
+</body>
+</html>
