@@ -11,6 +11,7 @@ class Sensor(models.Model):
     serial = models.CharField(max_length=20)
     brand = models.CharField(max_length=20)
 
+
 class Planta(models.Model):
     nome_cientifico = models.CharField(max_length=100)
     familia = models.CharField(max_length=100)
@@ -23,11 +24,19 @@ class Planta(models.Model):
     frequencia_irrigacao = models.CharField(max_length=100)
 
 
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    user_name = models.CharField(max_length=100)
+    email = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+
+
 def list_plantas(request):
     plantas = Planta.objects.all()
     return render(request, "plantas.html", {"plantas": plantas})
 
+
 def create_planta(request):
-        if form.is_valid():
-            form.save()
-            return redirect('list_plantas')
+    if form.is_valid():
+        form.save()
+        return redirect('list_plantas')
