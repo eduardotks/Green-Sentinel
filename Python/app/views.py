@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -119,3 +120,26 @@ def create_user(request):
         data['msg'] = 'Usuário cadastrado com sucesso!'
         data['class'] = 'alert-success'
     return render(request, 'registerUser.html', data)
+
+
+# Formulário do painel de login
+def login_panel(request):
+    return render(request, 'login.html')
+
+
+# Processa o login
+def dologin(request):
+    data = {}
+    user = authenticate(username=request.POST['user'], password=request.POST['password'])
+    if user is not None:
+        login(request, user)
+        return render(request, 'home.html')
+    else:
+        data['msg'] = 'Usuário ou Senha inválidos!'
+        data['class'] = 'alert-danger'
+        return render(request, 'login.html', data)
+
+
+def logouts(request):
+    logout(request)
+    return render(request, 'login.html')
