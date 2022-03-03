@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from app.views import sensor, create_sensor, create, view_sensor, edit_sensor, update_sensor, delete_sensor, \
     home_planta, form_planta, create_planta, view_planta, edit_planta, update_planta, delete_planta, register_user, \
-    create_user
+    create_user, dologin, login_panel, logouts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,4 +37,7 @@ urlpatterns = [
     path('delete_planta/<int:pk>/', delete_planta, name='delete_planta'),
     path('register_user/', register_user),
     path('create_user/', create_user),
+    path('login/', login_panel),
+    path('dologin/', dologin),
+    path('logouts/', logouts),
 ]

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% if request.user.is_authenticated %}
+        <h1>Área Restrita</h1>
+        Bem vindo <br>
+        <a href="/logouts/">Sair</a>
+    {% else %}
+        Você não tem acesso a essa área!
+    {% endif %}
+
+</body>
+</html>
