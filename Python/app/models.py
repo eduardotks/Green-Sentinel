@@ -31,6 +31,14 @@ class User(models.Model):
     password = models.CharField(max_length=50)
 
 
+class Measurer(models.Model):
+    planta = models.ForeignKey(Planta, on_delete=models.PROTECT)
+    sensor = models.ForeignKey(Sensor, on_delete=models.PROTECT)
+    luminosity = models.CharField(max_length=20)
+    temperature = models.IntegerField()
+    humidity = models.IntegerField()
+
+
 def list_plantas(request):
     plantas = Planta.objects.all()
     return render(request, "plantas.html", {"plantas": plantas})
