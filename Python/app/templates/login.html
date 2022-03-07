@@ -1,88 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 	<head>
-		<link rel="stylesheet" href="../styles/login.css" />
-
-		<style>
-			body {
-				font-family: Roboto;
-				padding: 56px 100px;
-				background-color: #ffffff;
-			}
-
-			.container {
-				max-width: 1170px;
-				margin: auto;
-				background-color: #f1f1f1;
-				padding: 16px;
-				box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-			}
-
-			.brand {
-				text-align: center;
-			}
-
-			.brand-image {
-				max-width: 200px;
-				margin-bottom: 20px;
-			}
-
-			.brand-title {
-				font-size: 36px;
-				color: #54a657;
-				font-weight: bold;
-			}
-
-			.login-container {
-				width: 360px;
-				padding: 16px 8px;
-				margin: auto;
-			}
-
-			.login-fields {
-				background-color: #ffffff;
-				border-radius: 8px;
-				padding: 16px 8px;
-				margin-bottom: 20px;
-				box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
-			}
-
-			.alert {
-				margin-bottom: 20px;
-			}
-
-			.login-field {
-				padding: 8px 8px;
-				width: 100%;
-			}
-
-			/* .login-field:first-of-type {
-				margin-bottom: 16px;
-			} */
-
-			.login-buttons {
-				width: 100%;
-				text-align: center;
-			}
-
-			.register-button,
-			.login-button {
-				padding: 12px 24px;
-				width: 35%;
-				background-color: #53af67;
-				border: none;
-				color: #ffffff;
-				font-weight: bold;
-				cursor: pointer;
-				margin: 0 8px;
-			}
-		</style>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/login.css' %}">
 	</head>
 	<body>
 		<div class="container">
 			<div class="brand">
+				{% load static %}
 				<img
 					class="brand-image"
-					src="../images/greenSentinelLogo.png"
+					src="{% static 'images/greenSentinelLogo.png' %}"
 				/>
 
 				<div class="brand-title">Green Sentinel</div>
@@ -119,13 +47,13 @@
 
 					<div class="login-buttons">
 						<input
-							class="register-button"
+							class="system-button register-button"
 							type="button"
 							value="Cadastrar"
 						/>
 
 						<input
-							class="btn btn-dark login-button"
+							class="system-button login-button"
 							type="submit"
 							value="Entrar"
 						/>

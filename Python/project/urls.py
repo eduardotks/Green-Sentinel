@@ -21,14 +21,15 @@ from app.views import sensor, create_sensor, create, view_sensor, edit_sensor, u
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sensor/', sensor),
+    path('sensores/', sensor),
+    path('', sensor),
     path('create_sensor/', create_sensor),
     path('create/', create, name='create'),
     path('view_sensor/<int:pk>/', view_sensor, name='view_sensor'),
     path('edit_sensor/<int:pk>/', edit_sensor, name='edit_sensor'),
     path('update_sensor/<int:pk>/', update_sensor, name='update_sensor'),
     path('delete_sensor/<int:pk>/', delete_sensor, name='delete_sensor'),
-    path('', home_planta, name='home_planta'),
+    path('plantas/', home_planta, name='home_planta'),
     path('form_planta/', form_planta, name='form_planta'),
     path('create_planta/', create_planta, name='create_planta'),
     path('view_planta/<int:pk>/', view_planta, name='view_planta'),
