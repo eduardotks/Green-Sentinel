@@ -1,0 +1,59 @@
+@import url("styles.css");
+
+.brand {
+    text-align: center;
+}
+
+.brand-image {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.brand-title {
+    font-size: 36px;
+    color: #54A657;
+    font-weight: bold;
+}
+
+.login-container {
+    width: 360px;
+    padding: 16px 8px;
+    margin: auto;
+}
+
+.login-fields {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 16px 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
+}
+
+.alert {
+    margin-bottom: 20px;
+}
+
+.login-field {
+    padding: 8px 8px;
+    width: 100%;
+}
+
+.login-field:first-of-type {
+    margin-bottom: 16px;
+}
+
+.login-buttons {
+    width: 100%;
+    text-align: center;
+}
+
+.register-button, .login-button {
+    padding: 12px 24px;
+    width: 35%;
+    background-color: #53AF67;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 8px;
+}

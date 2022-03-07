@@ -24,6 +24,8 @@ def create_sensor(request):
     data = {'createSensor': SensorForm}
     return render(request, 'createSensor.html', data)
 
+def teste():
+    return ''
 
 def create(request):
     form = SensorForm(request.POST or None)
