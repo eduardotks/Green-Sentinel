@@ -1,56 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Green Sentinel</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-    <div class ="col-8 m-auto pt-2 pb-2 text-center">
-        <h1> Green Sentinel</h1>
-    </div>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/form_planta" class="btn btn-sucess"> Adicionar</a>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Green Sentinel</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
 
-    </div>
-     <div class="col-11 m-auto pt-2 pb-2 text-center">
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/plantas.css' %}" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="brand">
+				{% load static %}
+				<img
+					class="brand-image"
+					src="{% static 'images/greenSentinelLogo.png' %}"
+				/>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome Científico</th>
-      <th scope="col">País de Origem</th>
-      <th scope="col">Cor</th>
-      <th scope="col">Floração</th>
-      <th scope="col">Tamanho Médio</th>
-      <th scope="col">Solo</th>
-      <th scope="col">Luminosidade Preferida</th>
-      <th scope="col">Frequência de Irrigação</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
+				<div class="brand-title">Green Sentinel</div>
+			</div>
 
-{% for dbs in db %}
-    <tr>
-        <th>{{dbs.id}}</th>
-        <td>{{dbs.nome_cientifico}}</td>
-        <td>{{dbs.pais_origem}}</td>
-        <td>{{dbs.cor}}</td>
-        <td>{{dbs.floracao}}</td>
-        <td>{{dbs.tamanho_medio}}</td>
-        <td>{{dbs.solo}}</td>
-        <td>{{dbs.luminosidade_preferida}}</td>
-        <td>{{dbs.frequencia_irrigacao}}</td>
-        <td>
-            <a href="/view_planta/{{dbs.id}}/" class="btn btn-dark">Visualizar</a><br><br>
-            <a href="/edit_planta/{{dbs.id}}/" class="btn btn-primary">Editar</a><br><br>
-            <a href="/delete_planta/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
-        </td>
-    </tr>
-{% endfor %}
-</body>
+			<div class="col-8 m-auto pt-2 pb-2 text-center">
+				<h2>Plantas</h2>
+				
+				<a href="/form_planta" class="system-button add-button"> Adicionar</a>
+			</div>
 
-    {% load static %}
-    <script src="{% static 'javascript.js' %}"></script>
+			<div class="col-10 m-auto pt-2 pb-2 text-center">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nome Científico</th>
+							<th scope="col">País de Origem</th>
+							<th scope="col">Cor</th>
+							<th scope="col">Floração</th>
+							<th scope="col">Tamanho Médio</th>
+							<th scope="col">Solo</th>
+							<th scope="col">Luminosidade Preferida</th>
+							<th scope="col">Frequência de Irrigação</th>
+							<th scope="col">Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for dbs in db %}
+						<tr>
+							<th>{{dbs.id}}</th>
+							<td>{{dbs.nome_cientifico}}</td>
+							<td>{{dbs.pais_origem}}</td>
+							<td>{{dbs.cor}}</td>
+							<td>{{dbs.floracao}}</td>
+							<td>{{dbs.tamanho_medio}}</td>
+							<td>{{dbs.solo}}</td>
+							<td>{{dbs.luminosidade_preferida}}</td>
+							<td>{{dbs.frequencia_irrigacao}}</td>
+							<td>
+								<a
+									href="/view_planta/{{dbs.id}}/"
+									class="btn btn-dark"
+									>Visualizar</a
+								>
+								<a
+									href="/edit_planta/{{dbs.id}}/"
+									class="btn btn-primary"
+									>Editar</a
+								>
+								<a
+									href="/delete_planta/{{dbs.id}}/"
+									class="btn btn-danger btnDel"
+									>Deletar</a
+								>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+
+	{% load static %}
+	<script src="{% static 'javascript.js' %}"></script>
 </html>
