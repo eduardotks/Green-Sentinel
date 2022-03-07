@@ -1,9 +1,11 @@
+from random import randrange
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app.forms import SensorForm
-from app.models import Sensor
+from app.models import Sensor, Measurer
 from app.forms import PlantaForm
 from app.models import Planta
 
@@ -145,3 +147,18 @@ def dologin(request):
 def logouts(request):
     logout(request)
     return render(request, 'login.html')
+
+
+def measurer(request):
+    data = {'db': Measurer.objects.all}
+    return render(request, 'measurer.html', data)
+
+
+def simulator_measurer(request):
+    data = {'db': Measurer.objects.all()}
+    for measurer in data['db']:
+        measurer.humidity = randrange(5, 100)
+        measurer.temperature = randrange(10, 50)
+        measurer.luminosity = randrange(20, 100)
+        measurer.save()
+    return render(request, 'measurer.html', data)
