@@ -19,6 +19,10 @@ def sensor(request):
     data = {'db': Sensor.objects.all}
     return render(request, 'sensor.html', data)
 
+def sensores_user(request):
+    data = {'db': Sensor.objects.all}
+    return render(request, 'home.html', data)
+
 
 def create_sensor(request):
     data = {'createSensor': SensorForm}

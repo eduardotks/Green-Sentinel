@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app.views import sensor, create_sensor, create, view_sensor, edit_sensor, update_sensor, delete_sensor, \
+from app.views import sensor, sensores_user, create_sensor, create, view_sensor, edit_sensor, update_sensor, delete_sensor, \
     home_planta, form_planta, create_planta, view_planta, edit_planta, update_planta, delete_planta, register_user, \
     create_user, dologin, login_panel, logouts, measurer, simulator_measurer
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sensores/', sensor),
     path('', sensor),
+    path('home/', sensores_user),
     path('create_sensor/', create_sensor),
     path('create/', create, name='create'),
     path('view_sensor/<int:pk>/', view_sensor, name='view_sensor'),

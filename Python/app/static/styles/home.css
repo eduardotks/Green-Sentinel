@@ -1,0 +1,7 @@
+@import url("styles.css");
+
+.logout-button {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
