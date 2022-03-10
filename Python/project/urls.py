@@ -22,7 +22,7 @@ from app.views import sensor, sensores_user, create_sensor, create, view_sensor,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sensores/', sensor),
-    path('', sensor),
+    path('', login_panel),
     path('home/', sensores_user),
     path('create_sensor/', create_sensor),
     path('create/', create, name='create'),

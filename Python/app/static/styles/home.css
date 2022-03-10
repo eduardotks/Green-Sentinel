@@ -5,3 +5,23 @@
     top: 12px;
     right: 16px;
 }
+
+.navbar {
+    justify-content: center;
+    margin: 0 auto 16px !important;
+}
+
+.navbar-link {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    padding: 0 16px;
+}
+
+.navbar-link:not(:last-of-type) {
+    border-right: 1px solid #FFFFFF;
+}
+
+.navbar-link:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
