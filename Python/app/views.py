@@ -20,16 +20,8 @@ def sensor(request):
     return render(request, 'sensor.html', data)
 
 def sensores_user(request):
-    data = {}
-    user = authenticate(username=request.POST['user'], password=request.POST['password'])
-    if user is not None:
-        login(request, user)
-        data = {'db': Sensor.objects.all}
-        return render(request, 'home.html', data)
-    else:
-        data['msg'] = 'Usuário ou Senha inválidos!'
-        data['class'] = 'alert-danger'
-        return render(request, 'login.html', data)
+    data = {'db': Sensor.objects.all}
+    return render(request, 'home.html', data)
 
 
 def create_sensor(request):

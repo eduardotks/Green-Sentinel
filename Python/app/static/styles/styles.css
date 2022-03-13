@@ -72,3 +72,19 @@ tbody {
     border: 1px solid lightgray;
     border-radius: 4px;
 }
+
+.home-button {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: #53af67;
+}
+
+.home-button:hover {
+    color: #53af67;
+    text-decoration: none;
+}
+
+.home-button i {
+    margin-right: 8px;
+}
