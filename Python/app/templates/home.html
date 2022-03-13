@@ -10,6 +10,8 @@
 			crossorigin="anonymous"
 		/>
 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 		{% load static %}
@@ -33,16 +35,21 @@
 			</div>
 
 			{% if request.user.is_authenticated %}
-			<nav
+			<div class="navigation">
+				<a href="http://127.0.0.1:8000/plantas/" class="navigation-button"><i class="fas fa-seedling"></i>Ver plantas</a>
+
+				<a href="http://127.0.0.1:8000/sensores/" class="navigation-button"><i class="fas fa-satellite-dish"></i>Ver sensores</a>
+			</div>
+			<!-- <nav
 				style="margin: 0 auto"
 				class="navbar col-2 navbar-light bg-dark"
 			>
 				<a class="navbar-link" href="http://127.0.0.1:8000/plantas/">Ver plantas</a>
 
 				<a class="navbar-link" href="http://127.0.0.1:8000/sensores/">Ver sensores</a>
-			</nav>
+			</nav> -->
 
-			<a class="logout-button" href="/logouts/">Sair</a>
+			<a class="logout-button" href="/logouts/"><i class="fas fa-power-off"></i>Sair</a>
 
 			<div class="col-10 m-auto pt-2 pb-2 text-center">
 				<select id="selectSensor" class="col-4 custom-select">
@@ -55,8 +62,19 @@
 				<div id="connectSensor" class="system-button add-button">
 					Adicionar
 				</div>
-	
-				<div id="listaSensores"></div>
+
+				<table class="col-8 table text-center">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Sensor</th>
+							<th scope="col">Umidade</th>
+							<th scope="col">Temperatura</th>
+							<th scope="col">Iluminação</th>
+						</tr>
+					</thead>
+					<tbody id="tableSensores">
+					</tbody>
+				</table>
 			</div>
 
 			{% else %} Você precisa estar logado {% endif %}

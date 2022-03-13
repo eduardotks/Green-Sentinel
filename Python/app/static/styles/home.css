@@ -4,24 +4,51 @@
     position: absolute;
     top: 12px;
     right: 16px;
+    color: indianred;
 }
 
-.navbar {
-    justify-content: center;
-    margin: 0 auto 16px !important;
-}
-
-.navbar-link {
-    color: #FFFFFF !important;
-    font-weight: bold;
-    padding: 0 16px;
-}
-
-.navbar-link:not(:last-of-type) {
-    border-right: 1px solid #FFFFFF;
-}
-
-.navbar-link:hover {
+.logout-button:hover {
+    color: indianred;
     text-decoration: none;
+}
+
+.logout-button i {
+    margin-right: 8px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
     color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 12px;
+    user-select: none;
+}
+
+.navigation-button {
+    padding: 8px 12px;
+    margin: 0 16px;
+    background-color: #53AF67;
+    border: 1px solid #53AF67;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #FFFFFF !important;
+}
+
+.navigation-button:hover {
+    background-color: #FFFFFF;
+    color: #53AF67 !important;
+    text-decoration: none;
+}
+
+.navigation-button i {
+    margin-right: 8px;
+}
+
+#selectSensor {
+    margin-bottom: 20px;
+}
+
+table {
+    margin: 0 auto !important;
 }

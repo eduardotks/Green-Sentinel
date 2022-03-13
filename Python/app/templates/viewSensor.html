@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-    <body>
-        <div class="col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Visualização</h1>
-        </div>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sensor</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
 
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="http://127.0.0.1:8000/sensores/" class="btn btn-info">Voltar</a>
-        </div>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+	</head>
 
-        <div class="col-8 m-auto pt-4 pb-2 text-center">
+	<body>
+		<div class="container">
+			<div class="brand">
+				{% load static %}
+				<img
+					class="brand-image"
+					src="{% static 'images/greenSentinelLogo.png' %}"
+				/>
 
-            <strong>Nome: </strong>{{db.name}}<br>
-            <strong>Descrição: </strong>{{db.description}}<br>
-            <strong>Modelo: </strong>{{db.model}}<br>
-            <strong>Potencia: </strong>{{db.potency}}<br>
-            <strong>Duração: </strong>{{db.duration}}<br>
-            <strong>Número de Serie: </strong>{{db.serial}}<br>
-            <strong>Marca: </strong>{{db.brand}}<br>
-        </div>
-    </body>
+				<div class="brand-title">Green Sentinel</div>
+			</div>
+
+			<div class="col-8 m-auto pt-2 pb-2 text-center">
+				<h2>Informações do sensor</h2>
+
+				<a
+					href="http://127.0.0.1:8000/sensores/"
+					class="system-button add-button"
+				>
+					Voltar</a
+				>
+			</div>
+
+			<div class="col-8 m-auto pb-2 info-list">
+				<strong>Nome: </strong>{{db.name}}<br />
+				<strong>Descrição: </strong>{{db.description}}<br />
+				<strong>Modelo: </strong>{{db.model}}<br />
+				<strong>Potencia: </strong>{{db.potency}}<br />
+				<strong>Duração: </strong>{{db.duration}}<br />
+				<strong>Número de Serie: </strong>{{db.serial}}<br />
+				<strong>Marca: </strong>{{db.brand}}<br />
+			</div>
+		</div>
+	</body>
 </html>

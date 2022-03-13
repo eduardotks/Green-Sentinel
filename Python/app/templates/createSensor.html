@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Novo sensor</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Formulário</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+	</head>
 
-<body>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Cadastro</h1>
-    </div>
+	<body>
+		<div class="container">
+			<div class="brand">
+				{% load static %}
+				<img
+					class="brand-image"
+					src="{% static 'images/greenSentinelLogo.png' %}"
+				/>
 
-    <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/sensor" class="btn btn-info">Voltar</a>
-    </div>
+				<div class="brand-title">Green Sentinel</div>
+			</div>
 
-    <div class="col-8 m-auto pt-4 pb-2 text-center">
-            <form name="createSensor" id="createSensor" action="{% if db %}/update_sensor/{{db.id}}/{%else%}/create/{% endif %}" method="post">
-            {% csrf_token %}
-            <!--{{form.as_p}}-->
-            <div class="form-group mt-4">Nome: {{createSensor.name}}</div>
-            <div class="form-group mt-4">Descrição: {{createSensor.description}}</div>
-            <div class="form-group mt-4">Modelo: {{createSensor.model}}</div>
-            <div class="form-group mt-4">Potencia: {{createSensor.potency}}</div>
-            <div class="form-group mt-4">Duração: {{createSensor.duration}}</div>
-            <div class="form-group mt-4">Número de Serie: {{createSensor.serial}}</div>
-            <div class="form-group mt-4">Marca: {{createSensor.brand}}</div>
-            <input type="submit" class="btn btn-success" value="Salvar">
-        </form>
-    </div>
-</body>
+			<div class="col-8 m-auto pt-2 pb-2 text-center">
+				<h2>Cadastro de Sensor</h2>
+
+				<a
+					href="http://127.0.0.1:8000/sensores/"
+					class="system-button add-button"
+				>
+					Voltar</a
+				>
+			</div>
+
+			<div class="col-8 m-auto pt-2 pb-2 text-center">
+				<form
+					name="createSensor"
+					id="createSensor"
+					action="{% if db %}/update_sensor/{{db.id}}/{%else%}/create/{% endif %}"
+					method="post"
+				>
+					{% csrf_token %}
+					<div class="form-group mt-4">
+						Nome: {{createSensor.name}}
+					</div>
+					<div class="form-group mt-4">
+						Descrição: {{createSensor.description}}
+					</div>
+					<div class="form-group mt-4">
+						Modelo: {{createSensor.model}}
+					</div>
+					<div class="form-group mt-4">
+						Potencia: {{createSensor.potency}}
+					</div>
+					<div class="form-group mt-4">
+						Duração: {{createSensor.duration}}
+					</div>
+					<div class="form-group mt-4">
+						Número de Serie: {{createSensor.serial}}
+					</div>
+					<div class="form-group mt-4 mb-4">
+						Marca: {{createSensor.brand}}
+					</div>
+					<input
+						type="submit"
+						class="system-button add-button"
+						value="Cadastrar"
+					/>
+				</form>
+			</div>
+		</div>
+	</body>
 </html>

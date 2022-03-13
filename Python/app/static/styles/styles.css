@@ -1,7 +1,7 @@
 body {
     font-family: Roboto;
     padding: 56px 100px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     margin: 0;
 }
 
@@ -9,7 +9,7 @@ body {
     margin: auto;
     background-color: #f1f1f1;
     padding: 16px;
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
     max-width: 100% !important;
     position: relative !important;
 }
@@ -25,25 +25,25 @@ body {
 
 .brand-title {
     font-size: 36px;
-    color: #54A657;
+    color: #54a657;
     font-weight: bold;
 }
 
 table {
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 tbody {
-    background-color: #FFFFFF !important;
+    background-color: #ffffff !important;
 }
 
 .system-button {
     padding: 12px 24px;
     width: 35%;
-    background-color: #53AF67;
-    border: 1px solid #53AF67 !important;
+    background-color: #53af67;
+    border: 1px solid #53af67 !important;
     border: none;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: bold;
     cursor: pointer;
     margin: 0 8px;
@@ -52,13 +52,23 @@ tbody {
 
 .system-button:hover {
     text-decoration: none;
-    background-color: #FFFFFF;
-    color: #53AF67;
-    border: 1px solid #53AF67;
+    background-color: #ffffff;
+    color: #53af67;
+    border: 1px solid #53af67;
 }
 
 .add-button {
     margin: 12px auto;
     max-width: 140px;
     text-align: center;
+    user-select: none;
+}
+
+.info-list {
+    width: fit-content;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
 }

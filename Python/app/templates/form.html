@@ -1,39 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulário</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-    <div class ="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Cadastro de Plantas</h1>
-    </div>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/" class="btn btn-info"> Voltar</a>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Nova planta</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
 
-    </div>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-       <form name="form_planta" id="form_planta" action="{% if db %}/update_planta/{{db.id}}/{%else%}/create_planta/{% endif %}" method="post">
-           {% csrf_token %}
-            <div class="form-group mt-4"> Nome Científico: {{form_planta.nome_cientifico}}</div>
-            <div class="form-group mt-4"> Família: {{form_planta.familia}}</div>
-            <div class="form-group mt-4"> País de Origem: {{form_planta.pais_origem}}</div>
-            <div class="form-group mt-4"> Cor: {{form_planta.cor}}</div>
-            <div class="form-group mt-4"> Floração: {{form_planta.floracao}}</div>
-            <div class="form-group mt-4"> Tamanho Médio (em metros): {{form_planta.tamanho_medio}}</div>
-            <div class="form-group mt-4"> Frequência de Irrigação: {{form_planta.frequencia_irrigacao}}</div>
-            <div class="form-group mt-4"> Solo: {{form_planta.solo}}</div>
-            <div class="form-group mt-4"> Luminosidade Preferida: {{form_planta.luminosidade_preferida}}</div>
-            <input type="submit" class="btn btn-success" value="Salvar">
-      </form>
-    </div>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+	</head>
 
-  {% load static %}
-    <script src="{% static 'js/javascript.js' %}"></script>
+	<body>
+		<div class="container">
+			<div class="brand">
+				{% load static %}
+				<img
+					class="brand-image"
+					src="{% static 'images/greenSentinelLogo.png' %}"
+				/>
 
-</body>
+				<div class="brand-title">Green Sentinel</div>
+			</div>
+
+			<div class="col-8 m-auto pt-2 pb-2 text-center">
+				<h2>Cadastro de Planta</h2>
+
+				<a
+					href="http://127.0.0.1:8000/plantas/"
+					class="system-button add-button"
+				>
+					Voltar</a
+				>
+			</div>
+
+			<div class="col-8 m-auto pt-2 pb-2 text-center">
+				<form
+					name="form_planta"
+					id="form_planta"
+					action="{% if db %}/update_planta/{{db.id}}/{%else%}/create_planta/{% endif %}"
+					method="post"
+				>
+					{% csrf_token %}
+					<div class="form-group">
+						Nome Científico: {{form_planta.nome_cientifico}}
+					</div>
+					<div class="form-group mt-4">
+						Família: {{form_planta.familia}}
+					</div>
+					<div class="form-group mt-4">
+						País de Origem: {{form_planta.pais_origem}}
+					</div>
+					<div class="form-group mt-4">Cor: {{form_planta.cor}}</div>
+					<div class="form-group mt-4">
+						Floração: {{form_planta.floracao}}
+					</div>
+					<div class="form-group mt-4">
+						Tamanho Médio (em metros): {{form_planta.tamanho_medio}}
+					</div>
+					<div class="form-group mt-4">
+						Frequência de Irrigação:
+						{{form_planta.frequencia_irrigacao}}
+					</div>
+					<div class="form-group mt-4">
+						Solo: {{form_planta.solo}}
+					</div>
+					<div class="form-group mt-4 mb-4">
+						Luminosidade Preferida:
+						{{form_planta.luminosidade_preferida}}
+					</div>
+					<input
+						type="submit"
+						class="system-button add-button"
+						value="Cadastrar"
+					/>
+				</form>
+			</div>
+		</div>
+
+		{% load static %}
+		<script src="{% static 'js/javascript.js' %}"></script>
+	</body>
 </html>
